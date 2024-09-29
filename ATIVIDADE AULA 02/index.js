@@ -33,6 +33,6 @@ const server = http.createServer((req, res) => {
 
 const portaDoservidor = 8080;
 
-server.listen(porta, () => {
+server.listen(portaDoservidor, () => {
     console.log(`Porta: ${portaDoservidor}!`);
 });
