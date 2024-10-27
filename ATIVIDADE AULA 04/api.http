@@ -1,0 +1,31 @@
+GET http://localhost:8080
+
+###
+
+GET http://localhost:8080/produtos/
+
+### 
+
+POST http://localhost:8080/produtos
+Content-type: application/json
+
+{
+    "nome": "Saga Crepúsculo",
+    "preco": "12",
+    "descricao": "produto"
+}
+
+###
+PUT http://localhost:8080/produtos/45b2ac65-1272-4c1a-a273-d2cb0940bf70
+Content-type: application/json
+
+{
+    "nome": "Novo Produto",
+    "preco": "15",
+    "descricao": "Produto atualizado"
+}
+
+
+###
+
+DELETE http://localhost:8080/produtos/464f87a1-ee48-4761-b127-9172f9fc8daa
