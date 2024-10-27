@@ -30,7 +30,7 @@ Content-Type: application/json
 
 {
     "nome": "Novo nome",
-    "descricao": "Nova desc",
+    "descricao": "Nova descrição",
     "preco": 100
 }
 
