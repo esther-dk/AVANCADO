@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Bem-vindo à Nossa Loja</h1>
+        <p>Confira nossos produtos abaixo</p>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <% produtos.forEach(produto => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="<%= produto.foto || '/static/default.jpg' %>" class="card-img-top" alt="<%= produto.nome %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= produto.nome %></h5>
+                            <p class="card-text"><%= produto.descricao %></p>
+                            <p class="card-text">R$<%= produto.preco.toFixed(2) %></p>
+                            <a href="#" class="btn btn-primary">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+    
+    <%- body %> 
+</body>
+</html>
+ 
