@@ -1,0 +1,42 @@
+###
+
+GET http://localhost:8080/
+
+###
+
+GET http://localhost:8080/api/produtos
+
+###
+
+GET http://localhost:8080/api/produtos/1
+
+###
+
+
+POST http://localhost:8080/api/produtos
+Content-Type: application/json
+
+{
+    "nome": "Tênis Minimalista Premium",
+    "descricao": "Adicione um toque de sofisticação ao seu visual com este tênis minimalista de calçar. Feito em couro vegano e com um design clean, ele é a definição de estilo contemporâneo. A sola de borracha reciclada oferece aderência e durabilidade, tornando-o perfeito para quem valoriza estética e sustentabilidade.",
+    "preco": 299.00,
+    "tags": ["tag1"]
+}
+
+
+###
+
+PUT http://localhost:8080/api/produtos/3
+Content-Type: application/json
+
+{
+    "nome": "Tênis Esportivo de Performance",
+    "descricao": "Projetado para atletas, este tênis de calçar conta com tecnologia de amortecimento avançada que absorve impactos durante atividades de alta intensidade. A parte superior em tecido sintético garante durabilidade, e o sistema de ventilação mantém os pés frescos. ",
+    "preco": 350.00
+}
+
+###
+
+DELETE http://localhost:8080/api/produtos/10
+
+

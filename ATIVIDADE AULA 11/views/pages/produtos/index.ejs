@@ -1,0 +1,54 @@
+<%- contentFor('body') %>
+
+<header class="header-loja-tenis text-light text-center py-5">
+    <h1 class="display-4">Bem-vindo à Nossa Loja de Tênis</h1>
+    <p class="lead">Encontre seu par perfeito e conquiste o asfalto!</p>
+</header>
+
+<div id="toggle-button" class="toggle-button" onclick="toggleBackground()"></div>
+
+<main class="container my-5">
+    <div class="row">
+        <% produtos.forEach(produto => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img height="400px" src="<%= produto.foto || '/static/uploads/default.jpg' %>" class="card-img-top" alt="<%= produto.nome %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= produto.nome %></h5>
+                        <p class="card-text"><%= produto.descricao %></p>
+                        <p class="card-text">R$<%= produto.preco.toFixed(2) %></p>
+                        <a href="#" class="btn btn-custom">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p class="mb-1">&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+        <p class="mb-2">Desenvolvido por Esther Marques da Silva</p>
+
+        <div class="d-flex justify-content-center">
+            <a href="mailto:esther@gmail.com" class="text-white me-3">
+                <i class="fas fa-envelope"></i> esther@gmail.com
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleBackground() {
+        const body = document.body;
+        const toggleButton = document.getElementById('toggle-button');
+
+        if (body.style.backgroundColor === 'white') {
+            body.style.backgroundColor = 'black';
+            toggleButton.classList.remove('light-mode');
+        } else {
+            body.style.backgroundColor = 'white';
+            toggleButton.classList.add('light-mode');
+        }
+    }
+</script>
